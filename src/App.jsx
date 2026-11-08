@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import "./index.css";
@@ -37,9 +37,8 @@ function App() {
     <Router>
       <Navbar />
       <ScrollToSection />
-      <div className="max-w-7xl mx-auto pt-20 px-6">
+      <main className="pt-20">
         <Routes>
-          {/* Home Page with all sections */}
           <Route
             path="/"
             element={
@@ -52,10 +51,9 @@ function App() {
               </>
             }
           />
-          {/* Contact Page */}
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </div>
+      </main>
     </Router>
   );
 }

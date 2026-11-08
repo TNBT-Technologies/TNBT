@@ -1,26 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/logo.png";
 
-function Navbar({ onNavClick }) {
+function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const toggleNavbar = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const toggleNavbar = () => setMobileOpen((open) => !open);
 
   const handleNavClick = (id) => {
     setMobileOpen(false); // Close menu
-    if (onNavClick) onNavClick(); // Close PDF if open
-
     if (location.pathname !== "/") {
-      navigate("/"); // Navigate to home first
-      setTimeout(() => {
-        scrollToSection(id);
-      }, 500); // Wait for navigation to complete
+      navigate(`/#${id}`);
     } else {
       scrollToSection(id);
     }
@@ -40,69 +33,88 @@ function Navbar({ onNavClick }) {
     }, 200);
   };
 
-  return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-800">
-      <div className="container px-4 mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center flex-shrink-0">
-          <img className="h-[50px] w-[50px] mr-3" src={logo} alt="logo" />
-          <span className="text-lg font-bold tracking-tight">TNBT Technologies</span>
-        </div>
+  const navigation = ["features", "workflow", "projects"];
 
-        {/* Centered Navigation Items (Desktop) */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex space-x-12">
-          {["features", "workflow", "projects"].map((item) => (
-            <button key={item} onClick={() => handleNavClick(item)} className="hover:text-green-500">
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+  return (
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#080d0b]/85 backdrop-blur-xl">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8">
+        <Link to="/" className="flex items-center gap-3" aria-label="TNBT Technologies home">
+          <img className="h-10 w-10 rounded-xl object-contain" src={logo} alt="" />
+          <span className="font-[Manrope] text-base font-bold tracking-tight sm:text-lg">
+            TNBT <span className="text-[#8be28b]">Technologies</span>
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-9 lg:flex">
+          {navigation.map((item) => (
+            <button
+              key={item}
+              onClick={() => handleNavClick(item)}
+              className="text-sm font-medium capitalize text-neutral-300 transition-colors hover:text-[#a3efa3]"
+            >
+              {item}
             </button>
           ))}
         </div>
 
-        {/* Contact Us Button (Desktop) */}
-        <div className="hidden lg:flex">
-          <Link to="/contact" className="bg-gradient-to-r from-green-500 to-green-900 py-2 px-3 rounded-md text-white font-semibold">
-            Contact Us
+        <div className="hidden lg:block">
+          <Link
+            to="/contact"
+            className="rounded-full border border-[#8be28b]/30 bg-[#8be28b]/10 px-5 py-2.5 text-sm font-semibold text-[#a3efa3] transition hover:border-[#8be28b]/60 hover:bg-[#8be28b]/15"
+          >
+            Let’s talk <span aria-hidden="true">↗</span>
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden">
-          <button onClick={toggleNavbar} className="text-white focus:outline-none">
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 bg-neutral-900 text-white flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
-          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-        style={{ height: "100vh", width: "100vw" }}
-      >
-        <button onClick={toggleNavbar} className="absolute top-6 right-6">
-          <X size={32} />
-        </button>
-
-        <ul className="text-center space-y-6 text-xl font-semibold">
-          {["features", "workflow", "projects"].map((item) => (
-            <li key={item}>
-              <button onClick={() => handleNavClick(item)} className="hover:text-green-500">
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        {/* Contact Us Button in Mobile View */}
-        <Link
-          to="/contact"
+        <button
+          type="button"
           onClick={toggleNavbar}
-          className="mt-8 bg-gradient-to-r from-green-500 to-green-900 py-3 px-6 rounded-md text-white font-semibold"
+          aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileOpen}
+          className="rounded-lg p-2 text-neutral-100 transition hover:bg-white/10 lg:hidden"
         >
-          Contact Us
-        </Link>
+          {mobileOpen ? <X size={23} /> : <Menu size={23} />}
+        </button>
       </div>
+
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[60] flex flex-col bg-[#080d0b] px-6 pt-5 lg:hidden">
+          <div className="flex h-[56px] items-center justify-between">
+            <Link to="/" onClick={toggleNavbar} className="flex items-center gap-3">
+              <img className="h-9 w-9 rounded-lg object-contain" src={logo} alt="" />
+              <span className="font-[Manrope] font-bold">TNBT Technologies</span>
+            </Link>
+            <button
+              type="button"
+              onClick={toggleNavbar}
+              aria-label="Close navigation menu"
+              className="rounded-lg p-2 hover:bg-white/10"
+            >
+              <X size={23} />
+            </button>
+          </div>
+          <div className="flex flex-1 flex-col items-start justify-center gap-7">
+            {navigation.map((item, index) => (
+              <button
+                key={item}
+                onClick={() => handleNavClick(item)}
+                className="font-[Manrope] text-4xl font-semibold capitalize tracking-tight text-white"
+              >
+                <span className="mr-3 text-base font-medium text-[#8be28b]">0{index + 1}</span>
+                {item}
+              </button>
+            ))}
+            <Link
+              to="/contact"
+              onClick={toggleNavbar}
+              className="mt-3 rounded-full bg-[#8be28b] px-6 py-3 font-semibold text-[#081109]"
+            >
+              Let’s talk <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+          <p className="pb-8 text-sm text-neutral-500">Thoughtful digital experiences, built together.</p>
+        </div>
+      )}
     </nav>
   );
 }

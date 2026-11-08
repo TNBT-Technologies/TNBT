@@ -1,10 +1,3 @@
-import { BotMessageSquare } from "lucide-react";
-import { BatteryCharging } from "lucide-react";
-import { Fingerprint } from "lucide-react";
-import { ShieldHalf } from "lucide-react";
-import { PlugZap } from "lucide-react";
-import { GlobeLock } from "lucide-react";
-import React from "react";
 import { Code2, MonitorSmartphone, LayoutDashboard, Rocket, Users, BarChart3 } from "lucide-react";
 import { Instagram, Twitter, Linkedin, Mail, Phone } from "lucide-react";
 
@@ -59,24 +52,24 @@ export const features = [
 
 export const checklistItems = [
   {
-    title: "Seamless Code Integration",
+    title: "Understand the opportunity",
     description:
-      "Easily merge and integrate code across multiple development environments without conflicts.",
+      "We learn about your business, your users, and the problem you want your product to solve.",
   },
   {
-    title: "Effortless Code Review",
+    title: "Shape the right solution",
     description:
-      "Streamline your code review process with automated tools and collaborative feedback systems.",
+      "Together, we map out the experience and agree on a clear, practical direction for the work.",
   },
   {
-    title: "AI-Powered Development Assistance",
+    title: "Design and build together",
     description:
-      "Accelerate coding and debugging with AI-driven suggestions, auto-completion, and optimizations.",
+      "We share progress early, invite your feedback, and turn the plan into a polished digital product.",
   },
   {
-    title: "Quick and Secure Deployment",
+    title: "Launch and keep improving",
     description:
-      "Deploy your websites and apps with minimal downtime and maximum security in just a few clicks.",
+      "After launch, we help you make the next improvements as your product and business grow.",
   },
 ];
 

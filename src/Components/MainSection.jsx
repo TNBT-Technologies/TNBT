@@ -1,162 +1,158 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowDown, ArrowRight, FileText, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video2.mp4";
-import { X } from "lucide-react";
+
+const pdfURL = "/Quotation_tnbttechnologies.pdf";
 
 function MainSection() {
   const [showPDF, setShowPDF] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const pdfURL = "/Quotation_tnbttechnologies.pdf";
 
   useEffect(() => {
-    // Detect if the user is on a mobile device
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
-
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Prevent background scrolling when PDF is open
   useEffect(() => {
-    if (showPDF) {
-      document.body.style.overflow = "hidden"; // Disable background scrolling
-    } else {
-      document.body.style.overflow = "auto"; // Restore scrolling
-    }
+    if (!showPDF) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setShowPDF(false);
+    };
 
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup function
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [showPDF]);
 
   return (
-    <div className="relative flex flex-col items-center mt-[-3rem] sm:mt-[-2rem] lg:mt-10">
-      {/* Background Content Wrapper */}
-      <div
-        className={`transition-all duration-500 w-full flex flex-col items-center ${
-          showPDF ? "blur-md" : ""
-        }`}
-      >
-        {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center tracking-wide !text-inherit">
-          TNBT Technologies builds softwares
-          <span className="bg-gradient-to-r from-green-500 to-green-900 bg-clip-text text-transparent">
-            {" "}
-            for clients
+    <section className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 sm:px-8 sm:pt-16 lg:pb-28 lg:pt-20">
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-full max-w-[760px] -translate-x-1/2 rounded-full bg-[#255e35]/[0.13] blur-[120px]" />
+
+      <div className="mx-auto max-w-4xl text-center">
+        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#8be28b]/20 bg-[#8be28b]/[0.07] px-4 py-2 text-xs font-semibold tracking-wide text-[#a3efa3] sm:text-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#8be28b] shadow-[0_0_12px_#8be28b]" />
+          YOUR IDEAS, BUILT FOR WHAT’S NEXT
+        </div>
+        <h1 className="font-[Manrope] text-4xl font-semibold leading-[1.13] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
+          Digital products that move your business{" "}
+          <span className="bg-gradient-to-r from-[#b5f5a6] via-[#80df91] to-[#45bd7b] bg-clip-text text-transparent">
+            forward.
           </span>
         </h1>
-
-        {/* Description */}
-        <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-center text-neutral-500 max-w-4xl px-2 sm:px-0">
-          At TNBT Technologies, we build high-quality websites and apps
-          tailored to your business needs. Our team focuses on sleek design,
-          seamless functionality, and scalable solutions to help you grow
-          online. Let’s turn your ideas into reality with cutting-edge
-          technology and innovation!
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-neutral-400 sm:text-lg sm:leading-8">
+          We partner with ambitious teams to design and build thoughtful websites and applications—made to work beautifully and grow with you.
         </p>
-
-        {/* Documentation Button */}
-        <div className="flex justify-center my-6 sm:my-10">
+        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link
+            to="/contact"
+            className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#8be28b] px-7 font-semibold text-[#071008] transition hover:-translate-y-0.5 hover:bg-[#a4efa1] sm:w-auto"
+          >
+            Start a conversation
+            <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+          </Link>
+          <a
+            href="#projects"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/10 px-7 font-semibold text-neutral-200 transition hover:border-white/25 hover:bg-white/[0.04] sm:w-auto"
+          >
+            Explore our work <ArrowDown size={16} />
+          </a>
+        </div>
+        <div className="mt-5">
           {isMobile ? (
             <a
               href={pdfURL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-green-500 to-green-800 py-2 sm:py-3 px-3 sm:px-4 mx-2 sm:mx-3 rounded-md text-white font-semibold hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 py-2 text-sm text-neutral-400 transition hover:text-[#a3efa3]"
             >
-              Documentation
+              <FileText size={15} /> View company profile
             </a>
           ) : (
             <button
+              type="button"
               onClick={() => setShowPDF(true)}
-              className="bg-gradient-to-r from-green-500 to-green-800 py-2 sm:py-3 px-3 sm:px-4 mx-2 sm:mx-3 rounded-md text-white font-semibold hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 py-2 text-sm text-neutral-400 transition hover:text-[#a3efa3]"
             >
-              Documentation
+              <FileText size={15} /> View company profile
             </button>
           )}
         </div>
-
-        {/* Video Section */}
-        <div className="flex flex-col sm:flex-row mt-6 sm:mt-10 justify-center w-full max-w-5xl space-y-4 sm:space-y-0">
-          <video
-            autoPlay
-            loop
-            muted
-            className="rounded-lg w-[90%] sm:w-1/2 border border-green-800 shadow-green-800 mx-auto sm:mx-2"
-          >
-            <source src={video1} type="video/mp4"></source>
-            Your browser does not support the video tag.
-          </video>
-
-          <video
-            autoPlay
-            loop
-            muted
-            className="rounded-lg w-[90%] sm:w-1/2 border border-green-800 shadow-green-800 mx-auto sm:mx-2"
-          >
-            <source src={video2} type="video/mp4"></source>
-            Your browser does not support the video tag.
-          </video>
-        </div>
       </div>
 
-      {/* PDF Viewer (Only shows when button is clicked) */}
+      <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:mt-20 sm:grid-cols-2 sm:gap-5">
+        {[{ src: video1, label: "Design with purpose" }, { src: video2, label: "Built to perform" }].map(
+          ({ src, label }) => (
+            <div
+              key={label}
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101814] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.28)]"
+            >
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                aria-label={label}
+                className="aspect-[16/10] w-full rounded-xl object-cover"
+              >
+                <source src={src} type="video/mp4" />
+              </video>
+              <div className="absolute inset-x-1.5 bottom-1.5 rounded-b-xl bg-gradient-to-t from-black/75 to-transparent px-5 pb-4 pt-12">
+                <span className="text-sm font-medium text-white">{label}</span>
+              </div>
+            </div>
+          ),
+        )}
+      </div>
+
       <AnimatePresence>
         {showPDF && !isMobile && (
-          <>
-            {/* Background Overlay with Blur */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-black/75 p-4 backdrop-blur-md sm:p-8"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) setShowPDF(false);
+            }}
+          >
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md"
-            />
-
-            {/* PDF Viewer */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 flex flex-col items-center justify-center p-4 sm:p-10"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Company profile"
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 12, scale: 0.98 }}
+              className="flex h-[min(88vh,900px)] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#101814] shadow-2xl"
             >
-              {/* 🔹 Responsive PDF Embed */}
-              <div className="w-full max-w-4xl h-[80vh] sm:h-[90vh] bg-white rounded-lg shadow-lg overflow-hidden">
-                <iframe
-                  src={pdfURL}
-                  className="w-full h-full"
-                  style={{ minHeight: "500px" }}
-                  onError={(e) => console.error("PDF failed to load:", e)}
-                  title="Quotation PDF"
-                ></iframe>
-              </div>
-
-              {/* Buttons */}
-              <div className="flex gap-4 mt-5">
-                <a
-                  href={pdfURL}
-                  className="bg-gradient-to-r from-green-500 to-green-800 py-2 sm:py-3 px-4 rounded-md text-white font-semibold hover:scale-105 transition-all duration-300"
-                  download
-                >
-                  Download Document
-                </a>
+              <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-6">
+                <div>
+                  <p className="font-semibold text-white">TNBT Technologies</p>
+                  <p className="text-xs text-neutral-400">Company profile</p>
+                </div>
                 <button
+                  type="button"
                   onClick={() => setShowPDF(false)}
-                  className="text-white font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                  aria-label="Close company profile"
+                  className="rounded-full p-2 text-neutral-300 transition hover:bg-white/10 hover:text-white"
                 >
-                  <X size={20} /> {/* Cross Icon */}
+                  <X size={20} />
                 </button>
               </div>
+              <iframe src={pdfURL} title="TNBT Technologies company profile" className="min-h-0 flex-1 bg-white" />
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }
 
