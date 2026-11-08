@@ -31,10 +31,10 @@ function Contact() {
         {/* Left - Contact Info & Social Media */}
         <div className="w-full md:w-2/3 p-6 md:p-10 bg-white rounded-lg shadow-lg text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-            Just have a quick question?
+            Just have a quick question??
           </h2>
           <p className="text-gray-700 mb-6 text-lg">
-            We're here to help you achieve your business goals with our innovative IT solutions.
+            We're here to help you achieve your business goals with our innovative IT solutions and technology.
           </p>
           <p className="text-gray-700 mb-8 text-lg">
             Get in touch with us today and let's explore how we can drive your business forward together.
