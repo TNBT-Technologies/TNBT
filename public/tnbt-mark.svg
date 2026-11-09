@@ -1,45 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 392 372" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 28 326 318" fill="none">
   <defs>
-    <linearGradient id="top" x1="113" y1="45" x2="263" y2="151" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8FC9B4"/>
-      <stop offset=".5" stop-color="#D2D9C6"/>
-      <stop offset="1" stop-color="#F0DDB8"/>
+    <linearGradient id="top-face" x1="120" y1="35" x2="263" y2="155" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#88C7B4"/>
+      <stop offset=".48" stop-color="#CEDCCF"/>
+      <stop offset="1" stop-color="#F2E6CE"/>
     </linearGradient>
-    <linearGradient id="green" x1="62" y1="151" x2="219" y2="268" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#75FFD5"/>
-      <stop offset=".35" stop-color="#00D99A"/>
-      <stop offset="1" stop-color="#007E5F"/>
+    <linearGradient id="left-face" x1="45" y1="166" x2="154" y2="225" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64F3CE"/>
+      <stop offset=".52" stop-color="#00C98E"/>
+      <stop offset="1" stop-color="#008B68"/>
     </linearGradient>
-    <linearGradient id="greenLight" x1="181" y1="265" x2="308" y2="189" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7BFFE0"/>
-      <stop offset=".45" stop-color="#00DEA2"/>
-      <stop offset="1" stop-color="#00A978"/>
+    <linearGradient id="inner-face" x1="150" y1="132" x2="195" y2="193" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#009B70"/>
+      <stop offset="1" stop-color="#075B4B"/>
     </linearGradient>
-    <linearGradient id="front" x1="148" y1="206" x2="215" y2="314" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#E9F6E9"/>
-      <stop offset=".3" stop-color="#A7E8D0"/>
-      <stop offset="1" stop-color="#00DBA2"/>
+    <linearGradient id="right-face" x1="171" y1="270" x2="306" y2="193" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#30E9B3"/>
+      <stop offset=".55" stop-color="#00C88D"/>
+      <stop offset="1" stop-color="#008E68"/>
     </linearGradient>
-    <linearGradient id="side" x1="149" y1="143" x2="149" y2="289" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00B986" stop-opacity=".48"/>
-      <stop offset="1" stop-color="#008765" stop-opacity=".82"/>
+    <linearGradient id="front-face" x1="154" y1="184" x2="211" y2="314" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E5F0DC"/>
+      <stop offset=".36" stop-color="#A2E3C9"/>
+      <stop offset="1" stop-color="#08C993"/>
     </linearGradient>
-    <filter id="glow" x="10" y="12" width="344" height="350" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="6"/>
-    </filter>
+    <linearGradient id="fold-face" x1="116" y1="206" x2="151" y2="284" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#008D6A" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#064B42"/>
+    </linearGradient>
   </defs>
 
-  <g opacity=".2" filter="url(#glow)" stroke="#16F5B7" stroke-linejoin="round" stroke-width="10">
-    <path d="m36 175 113-49 66 30 114 20v65l-114 47v46l-68-39-36-17v-58l-75 34v-66Z"/>
-    <path d="m111 40 168 69v69l-168-71V40Z" stroke="#E8FFF5"/>
+  <g stroke-linejoin="round" stroke-width="2">
+    <path
+      d="M111 40 279 109v69l-168-70V40Z"
+      fill="url(#top-face)"
+      stroke="#E5F0E4"
+    />
+    <path
+      d="m36 175 113-49v70L36 243v-68Z"
+      fill="url(#left-face)"
+      stroke="#70F3D0"
+    />
+    <path
+      d="m149 126 67 29-67 41v-70Z"
+      fill="url(#inner-face)"
+      stroke="#23D5A1"
+    />
+    <path
+      d="m111 218 38-22v92l-38-11v-59Z"
+      fill="url(#fold-face)"
+      stroke="#0AB783"
+    />
+    <path
+      d="m149 226 180-51v66l-113 47-67-35v-27Z"
+      fill="url(#right-face)"
+      stroke="#62EBC3"
+    />
+    <path
+      d="m149 196 67-41v179l-67-40V196Z"
+      fill="url(#front-face)"
+      stroke="#D5F5E7"
+    />
   </g>
 
-  <path d="m111 218 38-22v92l-38-11v-59Z" fill="url(#side)" stroke="#00D6A0" stroke-linejoin="round" stroke-width="1.5"/>
-  <path d="m36 175 113-49v70L36 242v-67Z" fill="url(#green)" stroke="#76FFE0" stroke-linejoin="round" stroke-width="2"/>
-  <path d="m149 126 67 29-67 38v-67Z" fill="#007B60" fill-opacity=".72" stroke="#10D9A1" stroke-linejoin="round" stroke-width="1.5"/>
-  <path d="m149 226 180-51v66l-114 47-66-34v-28Z" fill="url(#greenLight)" stroke="#9DFFE4" stroke-linejoin="round" stroke-width="2"/>
-  <path d="m149 194 67-39v179l-67-40V194Z" fill="url(#front)" stroke="#E4FFF5" stroke-linejoin="round" stroke-width="2"/>
-  <path d="m111 40 168 69v69l-168-71V40Z" fill="url(#top)" stroke="#FFFDF4" stroke-linejoin="round" stroke-width="2"/>
-  <path d="m149 194 67-39" stroke="#FFFDF4" stroke-opacity=".85" stroke-width="1.5"/>
-  <path d="m149 226 67 37" stroke="#E8FFF5" stroke-opacity=".55" stroke-width="1"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="m116 44 158 65" stroke="#FFF8E8" stroke-opacity=".72" stroke-width="1.5"/>
+    <path d="m41 176 103-45" stroke="#C1FFEA" stroke-opacity=".62" stroke-width="1.5"/>
+    <path d="m154 230 170-48" stroke="#C1FFEA" stroke-opacity=".52" stroke-width="1.5"/>
+    <path d="m154 200 57-35v161" stroke="#F0FFF4" stroke-opacity=".68" stroke-width="1.5"/>
+    <path d="m154 253 57 34" stroke="#E9FFF1" stroke-opacity=".42" stroke-width="1"/>
+  </g>
 </svg>

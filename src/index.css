@@ -31,9 +31,111 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  background:
+  background-color: var(--color-page);
+  background-image:
     radial-gradient(ellipse at 50% -18%, rgba(80, 145, 88, 0.13), transparent 42%),
-    var(--color-page);
+    linear-gradient(var(--color-page), var(--color-page));
+  background-attachment: fixed;
+}
+
+.site-ambient-background {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.site-ambient-orb {
+  position: absolute;
+  width: min(42vw, 600px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  filter: blur(clamp(70px, 11vw, 150px));
+  opacity: 0.17;
+  will-change: transform;
+}
+
+.site-ambient-orb-one {
+  top: -20%;
+  left: -12%;
+  background: radial-gradient(circle, rgba(33, 176, 112, 0.78), transparent 68%);
+  animation: ambient-drift-one 38s ease-in-out infinite alternate;
+}
+
+.site-ambient-orb-two {
+  top: 28%;
+  right: -17%;
+  width: min(48vw, 680px);
+  background: radial-gradient(circle, rgba(29, 109, 80, 0.72), transparent 68%);
+  animation: ambient-drift-two 46s ease-in-out infinite alternate;
+}
+
+.site-ambient-orb-three {
+  bottom: -34%;
+  left: 22%;
+  width: min(44vw, 620px);
+  background: radial-gradient(circle, rgba(102, 194, 117, 0.52), transparent 70%);
+  animation: ambient-drift-three 52s ease-in-out infinite alternate;
+}
+
+.site-ambient-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(192, 255, 213, 0.55) 0.7px, transparent 1px),
+    radial-gradient(circle, rgba(109, 232, 161, 0.32) 0.65px, transparent 1px);
+  background-position: 0 0, 38px 62px;
+  background-size: 107px 107px, 151px 151px;
+  mask-image: radial-gradient(ellipse at center, #000 0%, transparent 76%);
+  opacity: 0.11;
+  animation: ambient-twinkle 12s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-drift-one {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.94);
+  }
+  to {
+    transform: translate3d(16vw, 24vh, 0) scale(1.12);
+  }
+}
+
+@keyframes ambient-drift-two {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+  to {
+    transform: translate3d(-17vw, -16vh, 0) scale(0.9);
+  }
+}
+
+@keyframes ambient-drift-three {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.92);
+  }
+  to {
+    transform: translate3d(10vw, -22vh, 0) scale(1.1);
+  }
+}
+
+@keyframes ambient-twinkle {
+  from {
+    opacity: 0.06;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.14;
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-ambient-orb {
+    width: 76vw;
+    opacity: 0.12;
+  }
 }
 
 body,
@@ -83,5 +185,10 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .site-ambient-orb,
+  .site-ambient-stars {
+    animation: none !important;
   }
 }

@@ -34,63 +34,66 @@ function MainSection() {
   }, [showPDF]);
 
   return (
-    <section className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 sm:px-8 sm:pt-16 lg:pb-28 lg:pt-20">
-      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-full max-w-[760px] -translate-x-1/2 rounded-full bg-[#255e35]/[0.13] blur-[120px]" />
+    <section className="relative overflow-hidden">
+      <div className="pointer-events-none absolute left-1/2 top-[-90px] -z-10 h-[520px] w-full max-w-[760px] -translate-x-1/2 rounded-full bg-[#255e35]/[0.13] blur-[120px]" />
 
-      <div className="mx-auto max-w-4xl text-center">
-        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#8be28b]/20 bg-[#8be28b]/[0.07] px-4 py-2 text-xs font-semibold tracking-wide text-[#a3efa3] sm:text-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#8be28b] shadow-[0_0_12px_#8be28b]" />
-          YOUR IDEAS, BUILT FOR WHAT’S NEXT
-        </div>
-        <h1 className="font-[Manrope] text-4xl font-semibold leading-[1.13] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-          Digital products that move your business{" "}
-          <span className="bg-gradient-to-r from-[#b5f5a6] via-[#80df91] to-[#45bd7b] bg-clip-text text-transparent">
-            forward.
-          </span>
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-neutral-400 sm:text-lg sm:leading-8">
-          We partner with ambitious teams to design and build thoughtful websites and applications—made to work beautifully and grow with you.
-        </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            to="/contact"
-            className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#8be28b] px-7 font-semibold text-[#071008] transition hover:-translate-y-0.5 hover:bg-[#a4efa1] sm:w-auto"
-          >
-            Start a conversation
-            <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-          <a
-            href="#projects"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/10 px-7 font-semibold text-neutral-200 transition hover:border-white/25 hover:bg-white/[0.04] sm:w-auto"
-          >
-            Explore our work <ArrowDown size={16} />
-          </a>
-        </div>
-        <div className="mt-5">
-          {isMobile ? (
+      <div className="mx-auto max-w-7xl px-5 pb-8 pt-10 sm:px-8 sm:pb-10 sm:pt-16 lg:pt-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#8be28b]/20 bg-[#8be28b]/[0.07] px-4 py-2 text-xs font-semibold tracking-wide text-[#a3efa3] sm:text-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#8be28b] shadow-[0_0_12px_#8be28b]" />
+            YOUR IDEAS, BUILT FOR WHAT’S NEXT
+          </div>
+          <h1 className="font-[Manrope] text-4xl font-semibold leading-[1.13] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
+            Digital products that move your business{" "}
+            <span className="bg-gradient-to-r from-[#b5f5a6] via-[#80df91] to-[#45bd7b] bg-clip-text text-transparent">
+              forward.
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-neutral-400 sm:text-lg sm:leading-8">
+            We partner with ambitious teams to design and build thoughtful websites and applications—made to work beautifully and grow with you.
+          </p>
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              to="/contact"
+              className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#8be28b] px-7 font-semibold text-[#071008] transition hover:-translate-y-0.5 hover:bg-[#a4efa1] sm:w-auto"
+            >
+              Start a conversation
+              <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+            </Link>
             <a
-              href={pdfURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 py-2 text-sm text-neutral-400 transition hover:text-[#a3efa3]"
+              href="#projects"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/10 px-7 font-semibold text-neutral-200 transition hover:border-white/25 hover:bg-white/[0.04] sm:w-auto"
             >
-              <FileText size={15} /> View company profile
+              Explore our work <ArrowDown size={16} />
             </a>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setShowPDF(true)}
-              className="inline-flex items-center gap-2 py-2 text-sm text-neutral-400 transition hover:text-[#a3efa3]"
-            >
-              <FileText size={15} /> View company profile
-            </button>
-          )}
+          </div>
+          <div className="mt-3">
+            {isMobile ? (
+              <a
+                href={pdfURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 py-2 text-sm text-neutral-400 transition hover:text-[#a3efa3]"
+              >
+                <FileText size={15} /> View company profile
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setShowPDF(true)}
+                className="inline-flex items-center gap-2 py-2 text-sm text-neutral-400 transition hover:text-[#a3efa3]"
+              >
+                <FileText size={15} /> View company profile
+              </button>
+            )}
+          </div>
         </div>
-      </div>
 
-      <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:mt-20 sm:grid-cols-2 sm:gap-5">
-        {[{ src: video1, label: "Design with purpose" }, { src: video2, label: "Built to perform" }].map(
-          ({ src, label }) => (
+        <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-16">
+          {[
+            { src: video1, label: "Design with purpose" },
+            { src: video2, label: "Built to perform" },
+          ].map(({ src, label }) => (
             <div
               key={label}
               className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101814] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.28)]"
@@ -109,8 +112,8 @@ function MainSection() {
                 <span className="text-sm font-medium text-white">{label}</span>
               </div>
             </div>
-          ),
-        )}
+          ))}
+        </div>
       </div>
 
       <AnimatePresence>

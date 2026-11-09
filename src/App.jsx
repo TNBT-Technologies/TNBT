@@ -35,9 +35,15 @@ function ScrollToSection() {
 function App() {
   return (
     <Router>
+      <div className="site-ambient-background" aria-hidden="true">
+        <span className="site-ambient-orb site-ambient-orb-one" />
+        <span className="site-ambient-orb site-ambient-orb-two" />
+        <span className="site-ambient-orb site-ambient-orb-three" />
+        <span className="site-ambient-stars" />
+      </div>
       <Navbar />
       <ScrollToSection />
-      <main className="pt-20">
+      <main className="relative z-10 pt-20">
         <Routes>
           <Route
             path="/"
