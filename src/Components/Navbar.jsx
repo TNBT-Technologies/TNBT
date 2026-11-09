@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "/logo.png";
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,7 +38,7 @@ function Navbar() {
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#080d0b]/85 backdrop-blur-xl">
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-3" aria-label="TNBT Technologies home">
-          <img className="h-10 w-10 rounded-xl object-contain" src={logo} alt="" />
+          <img className="h-12 w-12 object-contain" src="/tnbt-mark.svg" alt="" />
           <span className="font-[Manrope] text-base font-bold tracking-tight sm:text-lg">
             TNBT <span className="text-[#8be28b]">Technologies</span>
           </span>
@@ -81,7 +80,7 @@ function Navbar() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-[#080d0b] px-6 pt-5 lg:hidden">
           <div className="flex h-[56px] items-center justify-between">
             <Link to="/" onClick={toggleNavbar} className="flex items-center gap-3">
-              <img className="h-9 w-9 rounded-lg object-contain" src={logo} alt="" />
+              <img className="h-11 w-11 object-contain" src="/tnbt-mark.svg" alt="" />
               <span className="font-[Manrope] font-bold">TNBT Technologies</span>
             </Link>
             <button

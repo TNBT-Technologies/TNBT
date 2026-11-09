@@ -1,6 +1,5 @@
 import { ArrowUpRight, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "/logo.png";
 
 const sectionLinks = [
   { label: "What we do", href: "/#features" },
@@ -15,7 +14,7 @@ function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr] lg:gap-16">
           <div>
             <Link to="/" className="inline-flex items-center gap-3" aria-label="TNBT Technologies home">
-              <img src={logo} alt="" className="h-10 w-10 rounded-xl object-contain" />
+              <img src="/tnbt-mark.svg" alt="" className="h-12 w-12 object-contain" />
               <span className="font-[Manrope] font-bold text-white">TNBT Technologies</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-neutral-400">
