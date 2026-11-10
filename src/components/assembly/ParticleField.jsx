@@ -19,7 +19,7 @@ const LOOK_BY_FORMATION = {
   Nebula: { a: "#5cf2c3", b: "#f2e6ce", off: [0.42, 0.06], offM: [0, 0.34], scale: 1, scaleM: 0.56, alpha: 1, spin: 0.09, tilt: 0.2 },
   Lattice: { a: "#6cb8ff", b: "#5cf2c3", off: [0, -0.1], offM: [0, -0.05], scale: 1.05, scaleM: 0.72, alpha: 0.42, spin: 0.035, tilt: 0 },
   Wave: { a: "#9fe6ff", b: "#5cf2c3", off: [0, -0.24], offM: [0, -0.22], scale: 1.05, scaleM: 0.72, alpha: 0.5, spin: 0.015, tilt: 0 },
-  Helix: { a: "#f2e6ce", b: "#5cf2c3", off: [0, 0.06], offM: [0, 0.08], scale: 1, scaleM: 0.6, alpha: 0.42, spin: 0, tilt: 0 },
+  Helix: { a: "#f2e6ce", b: "#5cf2c3", off: [0, 0.3], offM: [0, 0.08], scale: 0.95, scaleM: 0.6, alpha: 0.3, spin: 0, tilt: 0 },
   Core: { a: "#5cf2c3", b: "#f2e6ce", off: [0.64, 0.42], offM: [0.1, 0.45], scale: 0.8, scaleM: 0.5, alpha: 0.8, spin: 0.1, tilt: 0.12 },
 };
 

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 import { ArrowSwap } from "../ui/Buttons";
 import { CHAPTERS, SITE } from "../../data/site";
@@ -9,13 +10,31 @@ const CONTACT_INDEX = CHAPTERS.findIndex((c) => c.id === "contact");
 /**
  * Phones and tablets: once the reader is past the hero, a thumb-reachable way to start a
  * project (and call, when a number is configured). It steps aside on the contact section,
- * where the form itself is the call to action.
+ * where the form itself is the call to action, and while another call to action is on screen.
  * Uses CSS transitions (not mount/unmount) so rapid toggling retargets instead of restarting.
  */
+/** True while any element marked `data-cta-zone` is on screen (so we never show two CTAs at once). */
+function useCtaZoneInView() {
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const zones = document.querySelectorAll("[data-cta-zone]");
+    if (!zones.length) return undefined;
+    const visibleZones = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visibleZones.add(e.target) : visibleZones.delete(e.target)));
+      setInView(visibleZones.size > 0);
+    });
+    zones.forEach((z) => io.observe(z));
+    return () => io.disconnect();
+  }, []);
+  return inView;
+}
+
 export default function MobileCta() {
   const active = useActiveChapter();
   const menuOpen = useStore(menuOpenStore);
-  const visible = active >= 1 && active < CONTACT_INDEX && !menuOpen;
+  const zoneInView = useCtaZoneInView();
+  const visible = active >= 1 && active < CONTACT_INDEX && !menuOpen && !zoneInView;
   const phone = SITE.phones[0];
 
   return (

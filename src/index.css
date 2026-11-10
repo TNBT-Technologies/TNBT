@@ -342,13 +342,14 @@ html.lenis body {
   }
 
   /* ───────────────────────── Process numerals ───────────────────────── */
+  /* Large outlined stage numbers sit behind card content as a watermark */
   .step-numeral {
     color: transparent;
-    -webkit-text-stroke: 1px rgb(237 241 236 / 0.3);
+    -webkit-text-stroke: 1px rgb(237 241 236 / 0.12);
     transition: -webkit-text-stroke-color 500ms ease;
   }
   .step-numeral.is-active {
-    -webkit-text-stroke-color: rgb(92 242 195 / 0.75);
+    -webkit-text-stroke-color: rgb(92 242 195 / 0.42);
   }
 
   /* ───────────────────────── Technology logo lens ───────────────────────── */

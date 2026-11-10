@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ButtonLink } from "../components/ui/Buttons";
 import { EASE_OUT, cascade } from "../lib/motion";
+import { SITE } from "../data/site";
 
 const PILLARS = [
   { n: "01", title: "Web & mobile apps", text: "Websites, web applications and Android & iOS apps." },
@@ -61,7 +62,7 @@ export default function Hero() {
             </span>
             Software &amp; digital product studio
           </span>
-          <span className="hidden text-dim md:inline">Karkala · Bengaluru — India</span>
+          <span className="hidden text-dim md:inline">{SITE.locations.map((l) => l.city).join(" · ")} — India</span>
         </motion.div>
 
         <h1

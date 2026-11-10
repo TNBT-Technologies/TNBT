@@ -7,7 +7,7 @@ export const SITE = {
   shortName: "TNBT",
   tagline: "Turning ideas into digital experiences.",
   description:
-    "A software development studio building websites, mobile apps and business automation for growing teams. Based in Karkala and Bengaluru, India.",
+    "A software development studio building websites, mobile apps and business automation for growing teams. Based in Udupi and Bengaluru, India.",
   email: "tnbttechnologies@gmail.com",
   phones: [
     { display: "+91 79754 02353", href: "tel:+917975402353" },
@@ -15,7 +15,7 @@ export const SITE = {
   ],
   socials: [{ label: "Instagram", handle: "@tnbt_technologies", href: "https://www.instagram.com/tnbt_technologies" }],
   locations: [
-    { id: "karkala", city: "Karkala", region: "Karnataka, India", query: "Karkala, Karnataka, India" },
+    { id: "udupi", city: "Udupi", region: "Karnataka, India", query: "Udupi, Karnataka, India" },
     { id: "bengaluru", city: "Bengaluru", region: "Karnataka, India", query: "Bengaluru, Karnataka, India" },
   ],
 };

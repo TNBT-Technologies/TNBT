@@ -88,7 +88,8 @@ function ServiceRow({ service, index, open, onToggle }) {
             exit={{ height: 0, opacity: 0, transition: { height: { duration: 0.26, ease: EASE_OUT }, opacity: { duration: 0.15 } } }}
             className="overflow-hidden"
           >
-            <div className="grid gap-10 pb-10 pl-[calc(2.25rem+0.75rem)] sm:pl-[calc(4rem+0.75rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16 lg:pb-14 lg:pl-[calc(5rem+2rem)]">
+            {/* pt keeps the content clear of the heading's hover underline */}
+            <div className="grid gap-10 pb-10 pl-[calc(2.25rem+0.75rem)] pt-5 sm:pl-[calc(4rem+0.75rem)] sm:pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16 lg:pb-14 lg:pl-[calc(5rem+2rem)] lg:pt-8">
               <div>
                 <p className="text-sm leading-relaxed text-mist lg:hidden">{service.tagline}</p>
                 <p className="mt-3 max-w-xl text-base leading-relaxed text-fog/90 sm:text-lg lg:mt-0">{service.description}</p>

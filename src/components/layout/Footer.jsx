@@ -143,7 +143,7 @@ export default function Footer() {
             © {year} {SITE.name}. All rights reserved.
           </p>
           <div className="flex items-center justify-between gap-6 sm:justify-end">
-            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-dim">Karkala · Bengaluru — India</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-dim">{SITE.locations.map((l) => l.city).join(" · ")} — India</p>
             <BackToTop />
           </div>
         </div>

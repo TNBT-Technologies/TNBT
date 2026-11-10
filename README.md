@@ -1,6 +1,6 @@
 # TNBT Technologies — website
 
-Marketing site for TNBT Technologies, a software development studio (web, mobile, Zoho, AI and automation) based in Karkala and Bengaluru.
+Marketing site for TNBT Technologies, a software development studio (web, mobile, Zoho, AI and automation) based in Udupi and Bengaluru.
 
 Built with **React 19 + Vite 6**, **Tailwind CSS v4**, **framer-motion** and **Lenis** smooth scrolling. The particle background is hand-written WebGL (no three.js).
 

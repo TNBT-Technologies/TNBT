@@ -6,7 +6,7 @@ import { cascade } from "../lib/motion";
 
 // Words wrapped in *asterisks* render in the italic serif.
 const MANIFESTO =
-  "We're TNBT Technologies — a software studio working out of Karkala and Bengaluru. We help businesses replace guesswork, paperwork and patchwork tools with *software* that fits how they actually work: websites that earn trust, apps people enjoy using, and systems that quietly run the busy parts of the day.";
+  "We're TNBT Technologies — a software studio working out of Udupi and Bengaluru. We help businesses replace guesswork, paperwork and patchwork tools with *software* that fits how they actually work: websites that earn trust, apps people enjoy using, and systems that quietly run the busy parts of the day.";
 
 const PRINCIPLES = [
   {
