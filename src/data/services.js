@@ -1,0 +1,132 @@
+export const PROJECT_TYPES = [
+  "Website",
+  "Web application",
+  "Mobile app",
+  "UI/UX design",
+  "Backend & APIs",
+  "Zoho solution",
+  "AI integration",
+  "Not sure yet",
+];
+
+export const BUDGETS = ["Under ₹50k", "₹50k – ₹2L", "₹2L – ₹5L", "₹5L+", "Let's discuss"];
+
+export const SERVICES = [
+  {
+    id: "web",
+    title: "Web Development",
+    short: "Web Development",
+    tagline: "Websites and web apps that load fast and do real work.",
+    description:
+      "From a sharp business website to a full-stack platform with logins, payments and dashboards — built on a modern stack that is easy to maintain and ready to grow with you.",
+    capabilities: [
+      "Business websites",
+      "Portfolio websites",
+      "E-commerce platforms",
+      "Custom web applications",
+      "Admin dashboards",
+      "Full-stack applications",
+    ],
+    stack: ["react", "typescript", "tailwindcss", "nodejs", "postgresql", "vercel"],
+    projectType: "Website",
+    cta: "Discuss a web project",
+  },
+  {
+    id: "mobile",
+    title: "Mobile App Development",
+    short: "Mobile Apps",
+    tagline: "Android and iOS apps that feel at home on every phone.",
+    description:
+      "Cross-platform apps in Flutter or native Android in Kotlin — connected to your backend, Firebase or third-party APIs, and prepared for release on the stores.",
+    capabilities: [
+      "Android applications",
+      "iOS applications",
+      "Cross-platform applications",
+      "Flutter-based applications",
+      "Firebase integrations",
+      "API & backend integrations",
+    ],
+    stack: ["flutter", "dart", "kotlin", "android", "ios", "firebase"],
+    projectType: "Mobile app",
+    cta: "Discuss a mobile app",
+  },
+  {
+    id: "design",
+    title: "UI/UX Design",
+    short: "UI/UX Design",
+    tagline: "Interfaces that make complex things feel simple.",
+    description:
+      "We map how people will use your product, then design clear screens and interactive prototypes you can click through before a single line of code is written.",
+    capabilities: [
+      "Website design",
+      "Mobile application design",
+      "Interactive prototypes",
+      "Responsive interfaces",
+      "User experience optimization",
+    ],
+    stack: ["figma", "html5", "css3", "tailwindcss"],
+    projectType: "UI/UX design",
+    cta: "Discuss a design project",
+  },
+  {
+    id: "backend",
+    title: "Backend & Database Development",
+    short: "Backend & Databases",
+    tagline: "The dependable engine behind your product.",
+    description:
+      "Secure REST APIs, authentication, well-modelled databases and cloud integrations — with real-time features when your product needs live data.",
+    capabilities: [
+      "REST APIs",
+      "Backend architecture",
+      "Authentication systems",
+      "Database design",
+      "Cloud integrations",
+      "Real-time applications",
+    ],
+    stack: ["nodejs", "express", "python", "php", "postgresql", "mongodb", "supabase", "neon"],
+    projectType: "Backend & APIs",
+    cta: "Discuss a backend project",
+  },
+  {
+    id: "zoho",
+    title: "Zoho Development & Business Automation",
+    short: "Zoho & Automation",
+    tagline: "Your operations on Zoho — minus the manual work.",
+    description:
+      "We configure and extend the Zoho suite with custom Creator apps, Deluge scripts and Flow automations, then connect it to the other tools your business depends on.",
+    capabilities: [
+      "Zoho Creator",
+      "Zoho CRM",
+      "Zoho People",
+      "Zoho Payroll",
+      "Zoho Books",
+      "Zoho Inventory",
+      "Zoho Flow",
+      "Deluge scripting",
+      "Third-party API integrations",
+      "Custom business workflows",
+      "Business process automation",
+    ],
+    stack: ["zoho-creator", "zoho-crm", "zoho-people", "zoho-payroll", "zoho-books", "zoho-inventory", "zoho-flow", "deluge"],
+    projectType: "Zoho solution",
+    cta: "Discuss a Zoho project",
+  },
+  {
+    id: "ai",
+    title: "AI Integration & Automation",
+    short: "AI Integration",
+    tagline: "Practical AI, built into the tools you already use.",
+    description:
+      "We add useful intelligence to apps and workflows with the Gemini API — reading documents with OCR, drafting and summarising content, and automating repetitive steps.",
+    capabilities: [
+      "Gemini API integration",
+      "AI-powered application features",
+      "Intelligent automation",
+      "OCR integrations",
+      "AI-assisted business workflows",
+    ],
+    stack: ["gemini", "python", "nodejs", "zoho-flow"],
+    projectType: "AI integration",
+    cta: "Discuss an AI integration",
+  },
+];
