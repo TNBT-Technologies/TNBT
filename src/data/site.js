@@ -7,7 +7,7 @@ export const SITE = {
   shortName: "TNBT",
   tagline: "Turning ideas into digital experiences.",
   description:
-    "A software development studio building websites, mobile apps and business automation for growing teams. Based in Udupi and Bengaluru, India.",
+    "A software development studio building websites, mobile apps and business automation, with research and documentation support. Based in Udupi and Bengaluru, India.",
   email: "tnbttechnologies@gmail.com",
   phones: [
     { display: "+91 79754 02353", href: "tel:+917975402353" },

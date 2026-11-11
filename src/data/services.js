@@ -6,6 +6,7 @@ export const PROJECT_TYPES = [
   "Backend & APIs",
   "Zoho solution",
   "AI integration",
+  "Research & documentation",
   "Not sure yet",
 ];
 
@@ -128,5 +129,28 @@ export const SERVICES = [
     stack: ["gemini", "python", "nodejs", "zoho-flow"],
     projectType: "AI integration",
     cta: "Discuss an AI integration",
+  },
+  {
+    id: "research",
+    title: "Research, Journals & Documentation",
+    short: "Research & Documentation",
+    tagline: "Clear, well-structured writing for research and real-world projects.",
+    description:
+      "We help researchers and teams turn their work into clear, well-structured documents — research papers, journal articles, project reports and technical documentation — edited and formatted to the guidelines you're working to.",
+    capabilities: [
+      "Research paper writing & editing",
+      "Journal & conference paper formatting",
+      "Literature reviews",
+      "Citations & reference management",
+      "Plagiarism & originality checks",
+      "Journal submission support",
+      "Project reports",
+      "Software requirement specifications (SRS)",
+      "API & technical documentation",
+      "User manuals & guides",
+    ],
+    stack: ["latex", "overleaf", "zotero", "mendeley", "googlescholar", "markdown", "swagger"],
+    projectType: "Research & documentation",
+    cta: "Discuss a research or documentation project",
   },
 ];

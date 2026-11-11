@@ -142,7 +142,7 @@ export default function Services() {
           index="02"
           label="Services"
           title={["Everything it takes to", { text: "go digital.", em: true }]}
-          intro="Design, engineering and automation under one roof — so your website, app and back-office systems are built to work together."
+          intro="Design, engineering, automation and research writing under one roof — one team that understands your project from first sketch to final documentation."
         />
 
         <ul className="mt-16 border-t border-line sm:mt-20">

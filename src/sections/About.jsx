@@ -27,7 +27,7 @@ const PRINCIPLES = [
   },
 ];
 
-const AUDIENCE = ["Startups", "Small & medium businesses", "Entrepreneurs", "Local businesses", "Teams going digital"];
+const AUDIENCE = ["Startups", "Small & medium businesses", "Entrepreneurs", "Local businesses", "Teams going digital", "Researchers & academics"];
 
 const DELIVERABLES = [
   "Custom websites",
@@ -39,6 +39,8 @@ const DELIVERABLES = [
   "Zoho-based solutions",
   "AI integrations",
   "Business process automation",
+  "Research papers & journal articles",
+  "Technical documentation",
 ];
 
 function Word({ children, progress, range, em, reduce }) {

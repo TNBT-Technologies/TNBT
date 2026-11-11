@@ -7,6 +7,16 @@ export const getLenis = () => lenis;
 
 const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/**
+ * An element's layout position on the page. offsetTop ignores CSS transforms, so an element
+ * that's still mid-entrance (e.g. translated down while it reveals) doesn't skew the target.
+ */
+function pageTop(el) {
+  let y = 0;
+  for (let node = el; node; node = node.offsetParent) y += node.offsetTop;
+  return y;
+}
+
 /** Scrolls to an absolute page position, with Lenis when it's running. */
 export function scrollToY(y, { immediate = false } = {}) {
   const top = Math.max(0, Math.round(y));
@@ -27,7 +37,7 @@ export function scrollToSection(id, { updateHash = true, immediate = false, offs
 
   // An explicit pixel target (rather than the element) keeps Lenis from subtracting the root
   // scroll-padding, which exists so keyboard focus never hides under the fixed nav.
-  const top = toTop ? 0 : el.getBoundingClientRect().top + window.scrollY + offset;
+  const top = toTop ? 0 : pageTop(el) + offset;
   scrollToY(top, { immediate });
 
   if (updateHash) {

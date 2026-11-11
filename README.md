@@ -1,8 +1,8 @@
 # TNBT Technologies — website
 
-Marketing site for TNBT Technologies, a software development studio (web, mobile, Zoho, AI and automation) based in Udupi and Bengaluru.
+Marketing site for TNBT Technologies, a software development studio (web, mobile, Zoho, AI and automation, plus research and documentation work) based in Udupi and Bengaluru.
 
-Built with **React 19 + Vite 6**, **Tailwind CSS v4**, **framer-motion** and **Lenis** smooth scrolling. The particle background is hand-written WebGL (no three.js).
+Built with **React 19 + Vite 6**, **Tailwind CSS v4**, **framer-motion** and **Lenis** smooth scrolling. The particle background is hand-written WebGL.
 
 ```bash
 npm install
@@ -21,7 +21,7 @@ All copy lives in `src/data/` — no component changes needed for routine edits.
 | File | What it controls |
 | --- | --- |
 | `site.js` | Company name, email, phone numbers, social links, locations, chapter/nav order |
-| `services.js` | The six services, their capabilities, stacks, and the contact-form project types & budgets |
+| `services.js` | The seven services, their capabilities, stacks, and the contact-form project types & budgets |
 | `technologies.js` | Logos shown in each service's "Typical stack" |
 | `process.js` | The six delivery stages |
 
@@ -38,7 +38,7 @@ The form validates input, shows loading/success/error states, and is spam-protec
 
 Each service lists its typical stack with real brand logos, stored as optimised SVGs in `public/tech/` and served locally — nothing is fetched from third parties at runtime.
 
-- Most marks come from [Simple Icons](https://simpleicons.org) (v16; the classic CSS3 shield from v13), recoloured with each brand's colour. Brands whose colour is black (Express, Vercel, Apple) use their light variant so they read on the dark theme.
+- Most marks come from [Simple Icons](https://simpleicons.org) (v16; the classic CSS3 shield from v13), recoloured with each brand's colour. Brands whose colour is black (Express, Vercel, Apple, Markdown) use their light variant so they read on the dark theme.
 - Zoho Creator, CRM, People, Payroll, Books, Inventory, Flow and Deluge use Zoho's official product icons (from zoho.com), cropped to the icon without the wordmark.
 
 All brand marks are trademarks of their respective owners and are used only to indicate the technologies we work with.

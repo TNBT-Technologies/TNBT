@@ -44,5 +44,13 @@ export const TECH = Object.fromEntries(
     t("vercel", "Vercel", "vercel", "#EEF1EC"),
     t("figma", "Figma", "figma", "#F24E1E"),
     t("gemini", "Google Gemini", "gemini", "#8E75B2", "Gemini"),
+
+    t("latex", "LaTeX", "latex", "#00A3A3"),
+    t("overleaf", "Overleaf", "overleaf", "#47A141"),
+    t("zotero", "Zotero", "zotero", "#D13E4A"),
+    t("mendeley", "Mendeley", "mendeley", "#B65058"),
+    t("googlescholar", "Google Scholar", "googlescholar", "#4285F4", "Scholar"),
+    t("markdown", "Markdown", "markdown", "#EEF1EC"),
+    t("swagger", "Swagger", "swagger", "#85EA2D"),
   ].map((item) => [item.id, item]),
 );
