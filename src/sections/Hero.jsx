@@ -6,7 +6,7 @@ import { SITE } from "../data/site";
 
 const PILLARS = [
   { n: "01", title: "Web & mobile apps", text: "Websites, web applications and Android & iOS apps." },
-  { n: "02", title: "Zoho & automation", text: "Zoho solutions, custom workflows and AI integrations." },
+  { n: "02", title: "AI & automation", text: "AI integrations, custom workflows and business automation." },
   { n: "03", title: "Design × engineering", text: "Considered design, backed by solid engineering." },
 ];
 

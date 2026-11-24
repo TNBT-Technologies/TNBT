@@ -36,7 +36,6 @@ const DELIVERABLES = [
   "Business management systems",
   "Admin dashboards",
   "Database-driven applications",
-  "Zoho-based solutions",
   "AI integrations",
   "Business process automation",
   "Research papers & journal articles",

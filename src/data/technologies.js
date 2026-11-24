@@ -2,7 +2,7 @@ import { asset } from "../lib/asset";
 
 /**
  * Brand marks for the per-service "Typical stack" rows. They live in /public/tech as optimised SVGs
- * (Simple Icons + official Zoho product icons), so nothing is fetched from a third party at runtime.
+ * (from Simple Icons), so nothing is fetched from a third party at runtime.
  * `color` drives each logo's glow.
  */
 const t = (id, name, file, color, short = name) => ({ id, name, short, src: asset(`tech/${file}.svg`), color });
@@ -31,15 +31,6 @@ export const TECH = Object.fromEntries(
     t("supabase", "Supabase", "supabase", "#3FCF8E"),
     t("firebase", "Firebase", "firebase", "#FF7A00"),
     t("neon", "Neon", "neon", "#34D59A"),
-
-    t("zoho-creator", "Zoho Creator", "zoho-creator", "#E42527", "Creator"),
-    t("zoho-crm", "Zoho CRM", "zoho-crm", "#2F8BD6", "CRM"),
-    t("zoho-people", "Zoho People", "zoho-people", "#F9B21D", "People"),
-    t("zoho-payroll", "Zoho Payroll", "zoho-payroll", "#F9B21D", "Payroll"),
-    t("zoho-books", "Zoho Books", "zoho-books", "#3D8BD9", "Books"),
-    t("zoho-inventory", "Zoho Inventory", "zoho-inventory", "#E42527", "Inventory"),
-    t("zoho-flow", "Zoho Flow", "zoho-flow", "#2DB36B", "Flow"),
-    t("deluge", "Deluge", "deluge", "#2DB36B"),
 
     t("vercel", "Vercel", "vercel", "#EEF1EC"),
     t("figma", "Figma", "figma", "#F24E1E"),

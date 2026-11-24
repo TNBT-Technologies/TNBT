@@ -11,7 +11,7 @@ import {
   useVelocity,
 } from "framer-motion";
 
-const ROW_A = ["Websites", "Mobile Apps", "Web Applications", "Zoho Automation", "AI Integrations", "Research Papers"];
+const ROW_A = ["Websites", "Mobile Apps", "Web Applications", "Business Automation", "AI Integrations", "Research Papers"];
 const ROW_B = ["Admin Dashboards", "REST APIs", "UI/UX Design", "Journals", "E-commerce", "Documentation"];
 
 const wrap = (min, max, v) => {
